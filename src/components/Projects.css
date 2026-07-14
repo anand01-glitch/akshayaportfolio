@@ -51,10 +51,16 @@
   transition: all var(--transition-speed) ease;
 }
 
-.project-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--accent-cyan);
-  box-shadow: 0 15px 30px rgba(0, 242, 254, 0.08);
+.project-card:active {
+  transform: scale(0.98);
+}
+
+@media (hover: hover) {
+  .project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 15px 30px rgba(0, 242, 254, 0.08);
+  }
 }
 
 .project-image-container {
@@ -198,8 +204,8 @@
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -209,10 +215,16 @@
   transition: all var(--transition-speed) ease;
 }
 
-.modal-close-btn:hover {
-  background: var(--bg-card-hover);
-  border-color: var(--accent-pink);
-  transform: rotate(90deg);
+.modal-close-btn:active {
+  transform: scale(0.9);
+}
+
+@media (hover: hover) {
+  .modal-close-btn:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent-pink);
+    transform: rotate(90deg);
+  }
 }
 
 .modal-body {
