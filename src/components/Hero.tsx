@@ -87,24 +87,37 @@ export const Hero: React.FC = () => {
       <div className="hero-decor">
         <div className="decor-circle circle-purple"></div>
         <div className="decor-circle circle-cyan"></div>
-        <div className="code-card glass-panel animate-float">
-          <div className="code-card-header">
-            <span className="dot dot-red"></span>
-            <span className="dot dot-yellow"></span>
-            <span className="dot dot-green"></span>
-            <span className="card-title">specimen_purity.json</span>
+        <div className="specimen-card glass-panel animate-float">
+          <div className="specimen-card-header">
+            <span className="specimen-dot green-glow"></span>
+            <span className="card-title-biotech">Spectrophotometer A260/A280</span>
           </div>
-          <div className="code-card-body">
-            <pre>
-              <code>
-                <span className="code-keyword">const</span> DNA_Sample = &#123;<br />
-                &nbsp;&nbsp;type: <span className="code-string">'Plasmid DNA'</span>,<br />
-                &nbsp;&nbsp;concentration: <span className="code-string">'50 ng/µl'</span>,<br />
-                &nbsp;&nbsp;purityRatio: <span className="code-boolean">1.82</span>,<br />
-                &nbsp;&nbsp;passedQualityCheck: <span className="code-boolean">true</span><br />
-                &#125;;
-              </code>
-            </pre>
+          <div className="specimen-card-body">
+            <div className="specimen-line">
+              <span className="specimen-label">Sample ID</span>
+              <span className="specimen-val text-cyan">DNA-2026-KS</span>
+            </div>
+            <div className="specimen-line">
+              <span className="specimen-label">Concentration</span>
+              <span className="specimen-val text-purple">52.4 ng/µl</span>
+            </div>
+            <div className="specimen-line">
+              <span className="specimen-label">Purity (Ratio)</span>
+              <span className="specimen-val text-pink">1.82 (Pure)</span>
+            </div>
+            <div className="specimen-line">
+              <span className="specimen-label">Target Organism</span>
+              <span className="specimen-val">E. coli DH5α</span>
+            </div>
+            <div className="specimen-progress-container">
+              <div className="progress-labels">
+                <span>Purity Check</span>
+                <span>Passed</span>
+              </div>
+              <div className="progress-bar-track">
+                <div className="progress-bar-fill"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

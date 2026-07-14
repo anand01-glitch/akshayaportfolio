@@ -251,3 +251,109 @@
     width: 100%;
   }
 }
+
+/* Specimen Card styles */
+.specimen-card {
+  width: 330px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  text-align: left;
+}
+
+.specimen-card-header {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.9rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.specimen-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #34d399;
+}
+
+.green-glow {
+  box-shadow: 0 0 10px #34d399;
+}
+
+.card-title-biotech {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+}
+
+.specimen-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.specimen-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.specimen-label {
+  color: var(--text-secondary);
+}
+
+.specimen-val {
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.specimen-val.text-cyan { color: var(--accent-cyan); }
+.specimen-val.text-purple { color: var(--accent-purple); }
+.specimen-val.text-pink { color: var(--accent-pink); }
+
+.specimen-progress-container {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.progress-labels span:last-child {
+  color: #34d399;
+}
+
+.progress-bar-track {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 92%;
+  background: linear-gradient(90deg, var(--accent-cyan), #34d399);
+  border-radius: 10px;
+  animation: progress-fill-anim 1.5s ease-out forwards;
+}
+
+@keyframes progress-fill-anim {
+  from { width: 0; }
+  to { width: 92%; }
+}
