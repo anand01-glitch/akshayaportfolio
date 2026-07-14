@@ -1,0 +1,35 @@
+.app-container {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+}
+
+.main-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Base spacing and layout overrides for content sections */
+main section {
+  opacity: 0;
+  animation: slideUpFade 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animations for scroll fade ins can be customized here */
+main section:nth-of-type(1) { animation-delay: 0.1s; }
+main section:nth-of-type(2) { animation-delay: 0.2s; }
+main section:nth-of-type(3) { animation-delay: 0.3s; }
+main section:nth-of-type(4) { animation-delay: 0.4s; }
+main section:nth-of-type(5) { animation-delay: 0.5s; }
