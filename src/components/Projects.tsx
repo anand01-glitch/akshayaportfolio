@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import './Projects.css';
 
@@ -45,6 +45,20 @@ export const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<'All' | 'Lab Training' | 'Internship' | 'Workshops'>('All');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [syllabusView, setSyllabusView] = useState<{ title: string; topics: string[] } | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        if (syllabusView) {
+          setSyllabusView(null);
+        } else if (selectedProject) {
+          setSelectedProject(null);
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedProject, syllabusView]);
 
   const projectsList: Project[] = [
     {
@@ -222,17 +236,19 @@ export const Projects: React.FC = () => {
               <X size={20} />
             </button>
             
-            <div className="modal-info">
-              <h3 className="modal-title syllabus-title">{syllabusView.title}</h3>
-              <p className="modal-desc syllabus-subtitle">Curriculum Outline & Core Modules</p>
-              
-              <div className="syllabus-topics-list">
-                {syllabusView.topics.map((topic, idx) => (
-                  <div key={idx} className="syllabus-topic-item glass-panel">
-                    <span className="topic-number">{idx + 1}</span>
-                    <span className="topic-text">{topic}</span>
-                  </div>
-                ))}
+            <div className="modal-body">
+              <div className="modal-info">
+                <h3 className="modal-title syllabus-title">{syllabusView.title}</h3>
+                <p className="modal-desc syllabus-subtitle">Curriculum Outline & Core Modules</p>
+                
+                <div className="syllabus-topics-list">
+                  {syllabusView.topics.map((topic, idx) => (
+                    <div key={idx} className="syllabus-topic-item glass-panel">
+                      <span className="topic-number">{idx + 1}</span>
+                      <span className="topic-text">{topic}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

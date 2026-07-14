@@ -65,6 +65,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 18px;
 }
 
 body {
@@ -246,4 +247,38 @@ section {
   position: relative;
   width: 100%;
   min-height: 100vh;
+}
+
+/* Base Scaling and spacing overrides for mobile browsers */
+@media (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  section {
+    padding: 60px 1.5rem;
+    min-height: auto; /* Allow height to adjust naturally rather than force full screen */
+  }
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  section {
+    padding: 45px 1rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
 }
